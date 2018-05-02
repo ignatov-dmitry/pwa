@@ -42,14 +42,14 @@ import {
   MatToolbarModule,
   MatTooltipModule,
 } from '@angular/material';
-
-
+import { PushNotificationsModule } from 'ng-push';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    PushNotificationsModule,
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -85,7 +85,7 @@ import {
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('https://ignatov-dmitry.github.io/dzmitry.github.io/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
