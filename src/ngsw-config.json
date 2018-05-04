@@ -19,7 +19,7 @@
   "dataGroups": [{
       "name": "api-freshness",
       "urls": [
-        "http://localhost:8080**"
+        "https://ignatov-dmitry.github.io/dzmitry.github.io/**"
       ],
       "cacheConfig": {
         "strategy": "freshness",
