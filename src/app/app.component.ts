@@ -1,6 +1,4 @@
-import { Component, Inject, PLATFORM_ID, Injector } from '@angular/core';
-import {isPlatformBrowser} from '@angular/common';
-import { PushNotificationsService } from 'ng-push';
+import { Component} from '@angular/core';
 
 class Product {
   name: string;
@@ -21,10 +19,8 @@ class Product {
 })
 export class AppComponent {
   title = 'Тестовое PWA';
-  private _push: PushNotificationsService;
   text: string;
   price: number;
-  displayedColumns = ['Название', 'Цена', 'Заказать'];
   dataSource = items;
 
 
@@ -36,13 +32,6 @@ export class AppComponent {
       this.dataSource.push(new Product(text, price));
       this.price = null;
       this.text  = null;
-  }
-
-  constructor( @Inject(PLATFORM_ID) platformId: string,
-  private injector: Injector ) {
-    if (isPlatformBrowser(platformId)) {
-      this._push = this.injector.get(PushNotificationsService);
-   }
   }
 
 }
